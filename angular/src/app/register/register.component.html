@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-title>Register</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="email" matInput placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+  </p>  
+
+  <p>
+    <mat-form-field>
+      <input type="date" matInput placeholder="Date of birth" formControlName="dob" required>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password" required>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Submit</button>
+  </div>
+  <div>
+      <a href="" [routerLink]="['/']">Login</a>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

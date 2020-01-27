@@ -1,0 +1,19 @@
+<button color="primary" [routerLink]="['/product']" mat-button>Add Product</button>
+<button color="primary" (click)="logout()" mat-button>LogOut</button>
+<hr>
+<mat-list-item class="list-item" *ngFor="let product of products">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+    </mat-card-header>
+    <img class="image-class" mat-card-image src="{{product.image}}" alt="Photo of a {{product.name}}">
+    <mat-card-content>
+      <p>{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="delete(product._id)" mat-button>DELETE</button>
+      <button (click)="edit(product._id)" mat-button>EDIT</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+  </mat-list-item>

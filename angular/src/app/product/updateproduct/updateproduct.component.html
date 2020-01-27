@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-title>Update</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Product Name" formControlName="productname" required>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Image Link" formControlName="imagelink" required>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Discription" formControlName="description" required>
+    </mat-form-field>
+  </p>  
+
+  <p>
+    <mat-form-field>
+      <input type="date" matInput placeholder="Expiry Date" formControlName="expirydate" required>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Update Your Product</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
